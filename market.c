@@ -44,7 +44,7 @@ void adicionarProduto(const char *nomeArquivo){
     printf("digite o CODIGO do produto: ");
     scanf("%d", &cod);
     printf("digite o NOME do produto: ");
-    scanf("%49s", &nome);
+    scanf("%49s", nome);
     printf("digite o PRECO do produto: ");
     scanf("%f", &preco);
     printf("digite a QUANTIDADE do produto: ");
@@ -52,6 +52,7 @@ void adicionarProduto(const char *nomeArquivo){
 
     fprintf(f, "\n");
     fprintf(f, "%d %s %.2f %d", cod, nome, preco, qnt);
+    fclose(f);
 }
 
 void menu(int a, Produto p[]){
@@ -68,7 +69,8 @@ void menu(int a, Produto p[]){
         
         scanf("%d", &escolha);
         switch (escolha){
-        case 1: adicionarProduto("produtos.txt"); break;
+        case 1: adicionarProduto("produtos.txt");
+                a = lerTexto("produtos.txt", 50, p); break;
         case 2: break;
         case 3: imprimirProdutos(a, p); break;
         case 4: break;
