@@ -106,6 +106,7 @@ void menu(int a, Produto p[]){
 int main() {
     Produto p[50];
     int tam = sizeof(p)/sizeof(p[0]);
+    int fdp;
 
     int a = lerTexto("produtos.txt", tam, p);
 
