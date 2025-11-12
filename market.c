@@ -31,32 +31,51 @@ void imprimirProdutos(int a, Produto p[]){
     }
 }
 
-void adicionarProduto(const char *nomeArquivo, int tam, Produto p[]){
-    fopen(nomeArquivo, "a");
+void adicionarProduto(const char *nomeArquivo){
+    int cod, qnt;
+    float preco;
+    char nome[50];
+    FILE *f = fopen(nomeArquivo, "a");
+    if (f == NULL) {
+        printf("Erro ao salvar arquivo!\n");
+        return;
+    }
 
-    printf("digite o codigo do produto: ");
+    printf("digite o CODIGO do produto: ");
+    scanf("%d", &cod);
+    printf("digite o NOME do produto: ");
+    scanf("%49s", &nome);
+    printf("digite o PRECO do produto: ");
+    scanf("%f", &preco);
+    printf("digite a QUANTIDADE do produto: ");
+    scanf("%d", &qnt);
+
+    fprintf(f, "\n");
+    fprintf(f, "%d %s %.2f %d", cod, nome, preco, qnt);
 }
 
 void menu(int a, Produto p[]){
     int escolha;
 
-    printf("\n\n=======MENU=======");
-    printf("\n1. Adicionar produto");
-    printf("\n2. Buscar produto por código");
-    printf("\n3. Imprimir produtos");
-    printf("\n4. Ordenar por preço e imprimir");
-    printf("\n5. Sair");
-    printf("\n==================\n");
-    
-    scanf("%d", &escolha);
-    switch (escolha){
-    case 1: break;
-    case 2: break;
-    case 3: imprimirProdutos(a, p); break;
-    case 4: break;
-    case 5: break;
-    default: printf("digite um numero valido!"); break;
-    }
+    do{
+        printf("\n\n=======MENU=======");
+        printf("\n1. Adicionar produto");
+        printf("\n2. Buscar produto por código");
+        printf("\n3. Imprimir produtos");
+        printf("\n4. Ordenar por preço e imprimir");
+        printf("\n5. Sair");
+        printf("\n==================\n");
+        
+        scanf("%d", &escolha);
+        switch (escolha){
+        case 1: adicionarProduto("produtos.txt"); break;
+        case 2: break;
+        case 3: imprimirProdutos(a, p); break;
+        case 4: break;
+        case 5: break;
+        default: printf("digite um numero valido!"); break;
+        }
+    }while(escolha != 5);
 }
 
 int main() {
