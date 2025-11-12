@@ -18,3 +18,4 @@
 118 Biscoito 6.90 11
 119 Cereal 12.00 8
 120 Refrigerante 8.99 14
+10 pika2 1000.00 1

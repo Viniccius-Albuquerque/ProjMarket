@@ -27,7 +27,7 @@ int lerTexto(const char *nomeArquivo, int tam, Produto p[]) {
 
 void imprimirProdutos(int a, Produto p[]){
     for (int i = 0; i < a; i++) {
-        printf("cod %d, nome %s, pre %.2f, qnt %d\n", p[i].codigo, p[i].nome, p[i].preco, p[i].quantidade);
+        printf("codigo do produto: %d |, nome do produto: %s |, preco do produto: %.2f |, quantidade do produto:  %d |\n", p[i].codigo, p[i].nome, p[i].preco, p[i].quantidade);
     }
 }
 
