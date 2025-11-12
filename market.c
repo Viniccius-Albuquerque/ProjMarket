@@ -54,6 +54,29 @@ void adicionarProduto(const char *nomeArquivo){
     fprintf(f, "%d %s %.2f %d", cod, nome, preco, qnt);
     fclose(f);
 }
+void buscar_por_codigo(int a, Produto p[]){
+    int codigo;
+    int encontrado = 0;
+
+    printf("Digite o código do produto que deseja buscar: ");
+    scanf("%d", &codigo);
+
+    for (int i = 0; i < a; i++) {
+        if (p[i].codigo == codigo) {
+            printf("\n===== Produto encontrado =====\n");
+            printf("Código: %d\n", p[i].codigo);
+            printf("Nome: %s\n", p[i].nome);
+            printf("Preço: %.2f\n", p[i].preco);
+            printf("Quantidade: %d\n", p[i].quantidade);
+            printf("\n==================================\n");
+            encontrado = 1;
+            break;
+        }
+    }
+    if (!encontrado) {
+        printf("\nProduto com código %d não encontrado.\n", codigo);
+    }
+}
 
 void menu(int a, Produto p[]){
     int escolha;
@@ -71,7 +94,7 @@ void menu(int a, Produto p[]){
         switch (escolha){
         case 1: adicionarProduto("produtos.txt");
                 a = lerTexto("produtos.txt", 50, p); break;
-        case 2: break;
+        case 2: buscar_por_codigo(a, p); break;
         case 3: imprimirProdutos(a, p); break;
         case 4: break;
         case 5: break;
