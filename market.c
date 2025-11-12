@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-
+// codigo vinicius e caio
 typedef struct Produto {
     int codigo;
     char nome[50];
@@ -58,7 +58,7 @@ void buscar_por_codigo(int a, Produto p[]){
     int codigo;
     int encontrado = 0;
 
-    printf("Digite o código do produto que deseja buscar: ");
+    printf("Digite o codigo do produto que deseja buscar: ");
     scanf("%d", &codigo);
 
     for (int i = 0; i < a; i++) {
@@ -84,7 +84,7 @@ void menu(int a, Produto p[]){
     do{
         printf("\n\n=======MENU=======");
         printf("\n1. Adicionar produto");
-        printf("\n2. Buscar produto por código");
+        printf("\n2. Buscar produto por codigo");
         printf("\n3. Imprimir produtos");
         printf("\n4. Ordenar por preço e imprimir");
         printf("\n5. Sair");
