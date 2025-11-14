@@ -64,9 +64,9 @@ void buscar_por_codigo(int a, Produto p[]){
     for (int i = 0; i < a; i++) {
         if (p[i].codigo == codigo) {
             printf("\n===== Produto encontrado =====\n");
-            printf("Código: %d\n", p[i].codigo);
+            printf("Codigo: %d\n", p[i].codigo);
             printf("Nome: %s\n", p[i].nome);
-            printf("Preço: %.2f\n", p[i].preco);
+            printf("Preco: %.2f\n", p[i].preco);
             printf("Quantidade: %d\n", p[i].quantidade);
             printf("\n==================================\n");
             encontrado = 1;
@@ -78,6 +78,24 @@ void buscar_por_codigo(int a, Produto p[]){
     }
 }
 
+void ordenarImprimir(int a, Produto p[]){
+    Produto temp;
+
+    for(int i = 1; i < a; i++){
+        temp = p[i];
+        int j = i - 1;
+
+        while (j >= 0 && p[j].preco > temp.preco) {
+            p[j + 1] = p[j];
+            j--;
+        }
+        p[j + 1] = temp;
+    }
+
+    printf("\n===== Produtos ordenados por preço =====\n");
+    imprimirProdutos(a, p);
+}
+
 void menu(int a, Produto p[]){
     int escolha;
 
@@ -86,7 +104,7 @@ void menu(int a, Produto p[]){
         printf("\n1. Adicionar produto");
         printf("\n2. Buscar produto por codigo");
         printf("\n3. Imprimir produtos");
-        printf("\n4. Ordenar por preço e imprimir");
+        printf("\n4. Ordenar por preco e imprimir");
         printf("\n5. Sair");
         printf("\n==================\n");
         
@@ -96,8 +114,9 @@ void menu(int a, Produto p[]){
                 a = lerTexto("produtos.txt", 50, p); break;
         case 2: buscar_por_codigo(a, p); break;
         case 3: imprimirProdutos(a, p); break;
-        case 4: break;
-        case 5: break;
+        case 4: ordenarImprimir(a, p); break;
+        case 5: printf("Encerrando o Sistema ...\n");
+            break;
         default: printf("digite um numero valido!"); break;
         }
     }while(escolha != 5);
