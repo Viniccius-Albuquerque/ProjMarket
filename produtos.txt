@@ -18,12 +18,4 @@
 118 Biscoito 6.90 11
 119 Cereal 12.00 8
 120 Refrigerante 8.99 14
-10 pika2 1000.00 1
-200 iphone 8.00 5
-<<<<<<< HEAD
-203 CarneFriBoy 200.00 10
-=======
-400 jorge 12.00 1
-99 gg 3.00 2
-0 d 1.00 1
->>>>>>> fe7915c2e3d6353f24ce772a77af8e104e285a44
+300 Carnefodasse 160.00 2
