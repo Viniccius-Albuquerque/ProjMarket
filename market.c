@@ -114,9 +114,8 @@ void menu(int a, Produto p[]){
                 a = lerTexto("produtos.txt", 50, p); break;
         case 2: buscar_por_codigo(a, p); break;
         case 3: imprimirProdutos(a, p); break;
-        case 4: ordenarImprimir(a, p); break;
-        case 5: printf("Encerrando o Sistema ...\n");
-            break;
+        case 4: break;
+        case 5: break;
         default: printf("digite um numero valido!"); break;
         }
     }while(escolha != 5);
