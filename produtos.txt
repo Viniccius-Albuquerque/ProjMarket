@@ -18,5 +18,3 @@
 118 Biscoito 6.90 11
 119 Cereal 12.00 8
 120 Refrigerante 8.99 14
-
-400 Carne 120.00 5
