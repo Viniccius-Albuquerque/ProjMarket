@@ -49,8 +49,7 @@ void imprimirProdutos(int a, Produto p[]) {
     printf("--------------------------------------------------------------\n");
 
     for (int i = 0; i < a; i++) {
-        printf("| %-6d | %-15s | %-10.2f | %-10d |\n",
-               p[i].codigo, p[i].nome, p[i].preco, p[i].quantidade);
+        printf("| %-6d | %-15s | %-10.2f | %-10d |\n", p[i].codigo, p[i].nome, p[i].preco, p[i].quantidade);
     }
 
     printf("==============================================================\n");
